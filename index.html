@@ -12,7 +12,7 @@
 
     <script>
         (function() {
-            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+            emailjs.init("h6lKoXoXMp6feWeek"); // Replace with your EmailJS user ID
         })();
 
         document.getElementById('sendEmail').onclick = function() {
@@ -21,7 +21,7 @@
                 message: 'Hello World'
             };
 
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            emailjs.send('h6lKoXoXMp6feWeek', 'YOUR_TEMPLATE_ID', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                 }, function(error) {
