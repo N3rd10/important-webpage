@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <h1>Send Email</h1>
+    <button id="sendEmail">Send Email</button>
+
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById('sendEmail').onclick = function() {
+            const templateParams = {
+                to_email: 'landonmarting@icloud.com',
+                message: 'Hello World'
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        };
+    </script>
+</body>
+</html>
